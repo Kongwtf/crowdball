@@ -1,0 +1,15 @@
+#board {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+}
+
+#msg {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 15px;
+    padding: 15px;
+    width: 100px;
+}

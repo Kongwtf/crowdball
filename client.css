@@ -1,0 +1,11 @@
+#controls {
+    text-align: center;
+}
+
+button {
+    margin: 10px 25px;
+    font-size: 64px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+}
