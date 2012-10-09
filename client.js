@@ -14,6 +14,10 @@ var KEY_UP = 38;
 var KEY_DOWN = 40;
 var KEY_LEFT = 37;
 var KEY_RIGHT = 39;
+var KEY_P = 80;
+var KEY_N = 78;
+var KEY_B = 66;
+var KEY_F = 70;
 
 $(function() {
     $("button").on("click", function() {
@@ -24,25 +28,23 @@ $(function() {
 
     $(document).on("keydown", function(ev) {
         var name = "";
-        switch (ev.keyCode) {
-        case KEY_H:
-        case KEY_LEFT:
-            name = "left";
-            break;
-        case KEY_L:
-        case KEY_RIGHT:
-            name = "right";
-            break;
-        case KEY_J:
-        case KEY_DOWN:
-            name = "down";
-            break;
-        case KEY_K:
-        case KEY_UP:
+        var keycode = ev.keyCode;
+        if (keycode === KEY_K ||
+            keycode === KEY_UP ||
+            (ev.ctrlKey && keycode === KEY_P)) {
             name = "up";
-            break;
-        default:
-            break;
+        } else if (keycode === KEY_J ||
+            keycode === KEY_DOWN ||
+            (ev.ctrlKey && keycode === KEY_N)) {
+            name = "down";
+        } else if (keycode === KEY_H ||
+            keycode === KEY_LEFT ||
+            (ev.ctrlKey && keycode === KEY_B)) {
+            name = "left";
+        } else if (keycode === KEY_L ||
+            keycode === KEY_RIGHT ||
+            (ev.ctrlKey && keycode === KEY_F)) {
+            name = "right";
         }
 
         $("button[name=" + name + "]").click();
