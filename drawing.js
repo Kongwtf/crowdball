@@ -12,6 +12,10 @@ var ctx = null;
 var ball = {x: BOARD_SIZE / 2,
             y: BOARD_SIZE / 2};
 
+function initCtx(elem) {
+    return elem.getContext("2d");
+}
+
 function drawBall(x, y) {
     ctx.fillStyle = BALL_COLOR;
     ctx.lineStyle = OUTLINE_COLOR;

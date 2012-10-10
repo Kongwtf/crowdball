@@ -29,7 +29,7 @@ function handle_msg(msg) {
 
 $(function() {
     var board = $("#board").get(0);
-    ctx = board.getContext("2d");
+    initCtx(board);
     drawBoard();
 
     conn = new Strophe.Connection(BOSH_SERVER);
