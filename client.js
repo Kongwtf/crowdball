@@ -20,12 +20,6 @@ var KEY_B = 66;
 var KEY_F = 70;
 
 $(function() {
-    $("button").on("click", function() {
-        var msg = $msg({to: JID + "/server", type: "chat"})
-            .c("body").t($(this).attr("name"));
-        conn.send(msg);
-    });
-
     $(document).on("keydown", function(ev) {
         var name = "";
         var keycode = ev.keyCode;
@@ -48,6 +42,12 @@ $(function() {
         }
 
         $("button[name=" + name + "]").click();
+    });
+
+    $("button").on("click", function() {
+        var msg = $msg({to: JID + "/server", type: "chat"})
+            .c("body").t($(this).attr("name"));
+        conn.send(msg);
     });
 
     conn = new Strophe.Connection(BOSH_SERVER);
